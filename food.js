@@ -1,9 +1,5 @@
 let xhr = new XMLHttpRequest();
 
-if (!xhr) {
-  alert("you are not set up with a proper browser");
-}
-
 function execute() {
   if (xhr.readyState === 0 || xhr.readyState === 4) {
     // unsent or done
