@@ -15,12 +15,10 @@ function execute() {
 
 function handleServerResponse() {
   if (xhr.readyState == 4 && xhr.status == 200) {
-    // let XMLResponse = xhr.responseXML;
-    // let XMLDocumentElement = XMLResponse.documentElement;
-    // let message = XMLDocumentElement.innerHTML;
-    // document.getElementById(
-    //   "output"
-    // ).innerHTML = `<span style="color:green">${message}</span>`;
+    document.getElementById(
+      "output"
+    ).innerHTML = `<span style=color:blue>${xhr.responseText}</span>`;
+
     console.log("what is xhr: ", xhr.responseText);
     setTimeout(() => {
       execute();
