@@ -5,22 +5,23 @@ function execute() {
     // unsent or done
     let foodItem = document.getElementById("foodItem").value;
     let method = "GET";
-    let url = `./foodCheck.php?item=${foodItem}`;
+    let url = `http://localhost:5000/${foodItem}`;
 
     xhr.open(method, url, true);
     xhr.onreadystatechange = handleServerResponse;
-    xhr.send(null);
+    xhr.send();
   }
 }
 
 function handleServerResponse() {
   if (xhr.readyState == 4 && xhr.status == 200) {
-    let XMLResponse = xhr.responseXML;
-    let XMLDocumentElement = XMLResponse.documentElement;
-    let message = XMLDocumentElement.innerHTML;
-    document.getElementById(
-      "output"
-    ).innerHTML = `<span style="color:green">${message}</span>`;
+    // let XMLResponse = xhr.responseXML;
+    // let XMLDocumentElement = XMLResponse.documentElement;
+    // let message = XMLDocumentElement.innerHTML;
+    // document.getElementById(
+    //   "output"
+    // ).innerHTML = `<span style="color:green">${message}</span>`;
+    console.log("what is xhr: ", xhr.responseText);
     setTimeout(() => {
       execute();
     }, 1000);
